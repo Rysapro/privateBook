@@ -1,13 +1,12 @@
 package com.example.demo.service;
 
-import com.example.demo.Author;
+import com.example.demo.entity.Author;
 import com.example.demo.dto.AuthorDTO;
 import com.example.demo.mapper.AuthorMapper;
 import com.example.demo.repository.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,6 +42,17 @@ public class AuthorService {
     }
 
 
-
+    public Author updateAuthor(int id, Author updatedAuthor) {
+        Optional<Author> existingAuthor = authorRepository.findById(id);
+        if (existingAuthor.isPresent()) {
+            Author author = existingAuthor.get();
+            author.setName(updatedAuthor.getName());
+            author.setSurname(updatedAuthor.getSurname());
+            author.setAge(updatedAuthor.getAge());
+            author.setCountry(updatedAuthor.getCountry());
+            return authorRepository.save(author);
+        }
+        return null;
+    }
 }
 

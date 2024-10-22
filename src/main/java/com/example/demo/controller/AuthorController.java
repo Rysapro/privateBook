@@ -1,13 +1,11 @@
 package com.example.demo.controller;
 
-import com.example.demo.Author;
+import com.example.demo.entity.Author;
 import com.example.demo.dto.AuthorDTO;
 import com.example.demo.mapper.AuthorMapper;
 import com.example.demo.service.AuthorService;
-import com.example.demo.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,14 +23,14 @@ public class AuthorController {
         this.authorService = authorService;
     }
 
-    @GetMapping("/all")
+    @GetMapping("/findAll")
     public List<AuthorDTO> getAuthors() {
         return authorService.getAuthors().stream()
                 .map(AuthorMapper::toAuthorDTO)
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("findById/{id}")
     public ResponseEntity<AuthorDTO> getAuthorById(@PathVariable int id){
         AuthorDTO authorDTO = authorService.getAuthorById(id);
         if(authorDTO != null) {
@@ -42,12 +40,24 @@ public class AuthorController {
         }
     }
 
-    @PostMapping
+    @PostMapping("/save")
     public AuthorDTO addAuthor(@RequestBody AuthorDTO authorDTO) {
 
         Author newAuthor = AuthorMapper.toEntity(authorDTO);
         Author savedAuthor = authorService.addAuthor(newAuthor);
         return AuthorMapper.toAuthorDTO(savedAuthor);
+    }
+
+    @PutMapping("delete/{id}")
+    public ResponseEntity<AuthorDTO> updateAuthor(@PathVariable int id, @RequestBody AuthorDTO authorDTO) {
+        Author updatedAuthor = AuthorMapper.toEntity(authorDTO);
+        Author savedAuthor = authorService.updateAuthor(id, updatedAuthor);
+        if (savedAuthor != null) {
+            return new ResponseEntity<>(AuthorMapper.toAuthorDTO(savedAuthor), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
     }
 
 

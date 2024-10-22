@@ -1,8 +1,7 @@
 package com.example.demo.mapper;
 
-import com.example.demo.Author;
-import com.example.demo.Book;
-import com.example.demo.dto.AuthorDTO;
+import com.example.demo.entity.Author;
+import com.example.demo.entity.Book;
 import com.example.demo.dto.BookDTO;
 
 public class BookMapper {

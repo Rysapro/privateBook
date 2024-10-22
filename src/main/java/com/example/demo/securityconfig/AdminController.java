@@ -1,6 +1,6 @@
 //package com.example.demo.securityconfig;
 //
-//import com.example.demo.Author;
+//import com.example.demo.entity.Author;
 //import org.springframework.web.bind.annotation.PathVariable;
 //import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.bind.annotation.PutMapping;

@@ -1,13 +1,13 @@
     package com.example.demo.service;
 
-    import com.example.demo.Author;
-    import com.example.demo.Book;
+    import com.example.demo.entity.Author;
+    import com.example.demo.entity.Book;
     import com.example.demo.repository.AuthorRepository;
     import com.example.demo.repository.BookRepository;
+    import jakarta.transaction.Transactional;
     import org.springframework.beans.factory.annotation.Autowired;
     import org.springframework.stereotype.Service;
 
-    import java.util.ArrayList;
     import java.util.List;
     import java.util.Optional;
 
@@ -51,14 +51,20 @@
 //            return book;
         }
 
+        @Transactional
         public Book updateBook(int id, Book updatedBook) {
             Optional<Book> existingBook = bookRepository.findById(id);
                 if (existingBook.isPresent()) {
                     Book book = existingBook.get();
                     book.setTitle(updatedBook.getTitle());
-                    book.setAuthor(updatedBook.getAuthor());
+                    //book.setAuthor(updatedBook.getAuthor());
                     book.setYear(updatedBook.getYear());
                     book.setPages(updatedBook.getPages());
+                    //book.setCost(updatedBook.getCost());
+
+                    //update author
+                    Author author = updatedBook.getAuthor();
+                    book.setAuthor(updatedBook.getAuthor());
                     book.setCost(updatedBook.getCost());
 
                     return bookRepository.save(book);

@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.Author;
-import com.example.demo.Book;
+import com.example.demo.entity.Author;
+import com.example.demo.entity.Book;
 import com.example.demo.service.BookService;
 import com.example.demo.dto.BookDTO;
 import com.example.demo.mapper.BookMapper;
