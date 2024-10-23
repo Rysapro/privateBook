@@ -48,7 +48,7 @@ public class AuthorController {
         return AuthorMapper.toAuthorDTO(savedAuthor);
     }
 
-    @PutMapping("delete/{id}")
+    @PutMapping("update/{id}")
     public ResponseEntity<AuthorDTO> updateAuthor(@PathVariable int id, @RequestBody AuthorDTO authorDTO) {
         Author updatedAuthor = AuthorMapper.toEntity(authorDTO);
         Author savedAuthor = authorService.updateAuthor(id, updatedAuthor);
@@ -59,6 +59,17 @@ public class AuthorController {
         }
 
     }
+
+    @DeleteMapping("delete/{id}")
+    public ResponseEntity<String> deleteAuthor(@PathVariable int id) {
+        boolean isRemoved = authorService.deleteAuthor(id);
+        if (isRemoved) {
+            return new ResponseEntity<>("Author deleted successfuly", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Author not founded", HttpStatus.NOT_FOUND);
+        }
+    }
+
 
 
 
