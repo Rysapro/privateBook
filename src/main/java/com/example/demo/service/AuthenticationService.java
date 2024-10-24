@@ -1,5 +1,16 @@
 package com.example.demo.service;
 
+import com.example.demo.dto.SignInRequest;
+import com.example.demo.dto.SignUpRequest;
+import com.example.demo.entity.Role;
+import com.example.demo.entity.User;
+import com.example.demo.response.JwtAuthenticationResponse;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
 @Service
 @RequiredArgsConstructor
 public class AuthenticationService {
