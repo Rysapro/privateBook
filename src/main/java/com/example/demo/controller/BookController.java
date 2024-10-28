@@ -2,7 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.Author;
 import com.example.demo.entity.Book;
-import com.example.demo.service.BookService;
+import com.example.demo.service.impl.BookServiceImpl;
 import com.example.demo.dto.BookDTO;
 import com.example.demo.mapper.BookMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +15,10 @@ import java.util.stream.Collectors;
 @RequestMapping("/books")
 public class BookController {
 
-    private final BookService bookService;
+    private final BookServiceImpl bookService;
 
     @Autowired
-    public BookController(BookService bookService) {
+    public BookController(BookServiceImpl bookService) {
         this.bookService = bookService;
     }
 
