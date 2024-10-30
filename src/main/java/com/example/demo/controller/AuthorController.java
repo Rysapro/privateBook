@@ -1,9 +1,9 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.Author;
-import com.example.demo.dto.AuthorDTO;
+import com.example.demo.domain.dto.AuthorDTO;
 import com.example.demo.mapper.AuthorMapper;
-import com.example.demo.service.AuthorService;
+import com.example.demo.service.impl.AuthorServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,10 +16,10 @@ import java.util.stream.Collectors;
 @RequestMapping("/authors")
 public class AuthorController {
 
-    private final AuthorService authorService;
+    private final AuthorServiceImpl authorService;
 
     @Autowired
-    public AuthorController(AuthorService authorService) {
+    public AuthorController(AuthorServiceImpl authorService) {
         this.authorService = authorService;
     }
 

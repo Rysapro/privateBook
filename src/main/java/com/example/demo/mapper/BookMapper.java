@@ -2,7 +2,7 @@ package com.example.demo.mapper;
 
 import com.example.demo.entity.Author;
 import com.example.demo.entity.Book;
-import com.example.demo.dto.BookDTO;
+import com.example.demo.domain.dto.BookDTO;
 
 public class BookMapper {
 
