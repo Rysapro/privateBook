@@ -54,5 +54,13 @@ public class AuthorService {
         }
         return null;
     }
+
+    public boolean deleteAuthor(int id) {
+        if (authorRepository.existsById(id)){
+            authorRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
 }
 
