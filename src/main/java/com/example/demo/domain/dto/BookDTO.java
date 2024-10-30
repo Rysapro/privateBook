@@ -1,4 +1,4 @@
-package com.example.demo.dto;
+package com.example.demo.domain.dto;
 
 public record BookDTO(
         int id,

@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.Author;
-import com.example.demo.dto.AuthorDTO;
+import com.example.demo.domain.dto.AuthorDTO;
 import com.example.demo.mapper.AuthorMapper;
 import com.example.demo.service.impl.AuthorServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.SignInRequest;
-import com.example.demo.dto.SignUpRequest;
+import com.example.demo.domain.dto.SignInRequest;
+import com.example.demo.domain.dto.SignUpRequest;
 import com.example.demo.response.JwtAuthenticationResponse;
 import com.example.demo.service.AuthenticationService;
 import io.swagger.v3.oas.annotations.Operation;

@@ -1,7 +1,7 @@
 package com.example.demo.mapper;
 
 import com.example.demo.entity.Author;
-import com.example.demo.dto.AuthorDTO;
+import com.example.demo.domain.dto.AuthorDTO;
 
 public class AuthorMapper {
 

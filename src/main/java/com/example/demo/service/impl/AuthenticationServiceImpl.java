@@ -1,9 +1,9 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.dto.SignInRequest;
-import com.example.demo.dto.SignUpRequest;
-import com.example.demo.entity.Role;
-import com.example.demo.entity.User;
+import com.example.demo.domain.dto.SignInRequest;
+import com.example.demo.domain.dto.SignUpRequest;
+import com.example.demo.domain.model.Role;
+import com.example.demo.domain.model.User;
 import com.example.demo.response.JwtAuthenticationResponse;
 import com.example.demo.service.AuthenticationService;
 import com.example.demo.service.JwtService;

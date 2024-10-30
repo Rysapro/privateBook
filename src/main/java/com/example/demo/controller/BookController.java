@@ -3,7 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.entity.Author;
 import com.example.demo.entity.Book;
 import com.example.demo.service.impl.BookServiceImpl;
-import com.example.demo.dto.BookDTO;
+import com.example.demo.domain.dto.BookDTO;
 import com.example.demo.mapper.BookMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
